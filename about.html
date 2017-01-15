@@ -1,8 +1,24 @@
 ---
 title: About Me
+permalink: /about/
 ---
 
 <div class="row">
+  <div class="col-xs-12 col-sm-8">
+	<p>This blog is an assortment of websites, apps, programs, tricks I gathered or have been recommended over the years (mainly on the digital side). By fusing that knowledge with my polished high-class bookmarks, this collection has been remodelled to be a useful directory for the following characteristics of this blog:</p>
+	<ol>
+	<li><b>Service <i class="fa fa-lg fa-bolt"></i></b>
+	<p>Say you want to send a big file to somebody, or maybe a little touchup on a file without installing some clunky software. These are most common (or uncommon) problems you will stumble upon and hope I hope my choice is a convinently filtered answer.</p></li>
+	<li><b>Ephiphany <i class="fa fa-lg fa-bomb"></i></b>
+	<p>This is going to fill that hole in your heart you never knew you had. </p></li>
+	<li><b>Numbers <i class="fa fa-lg fa-cubes"></i></b>
+	<p>Numbers, datasets, infographics, inputs and outputs there is something to just play around with.</p></li>
+	<li><b>Refinery <i class="fa fa-lg fa-sun-o"></i></b>
+	<p>So I have a good chunk of bookmarks and a lot of them are dead/garbage but someone else out there might like it. Bookmarks also capture a moment in time, and everything from the date to the title I used says a lot. Maybe some reminiscencing of the past with a plenty sprinkling of anecdotes.</p></li>
+	<li><b>Personal <i class="fa fa-lg fa-bookmark"></i></b>
+	<p>As I find good oppotunities to talk about special websites and stuff with lots of heart and soul, these are the bookmarks I have saved in anticipation that someone else would enjoy what I enjoy. Who knows? I won't unless I initiate it ~</p></li>
+	</ol>
+  </div>
   <div class="col-xs-12 col-sm-4">
     <div class="row">
       <div class="col-xs-12 text-center">
@@ -20,23 +36,23 @@ title: About Me
         {% endif %}  
       </div>
       <div class="col-xs-12 text-center">
-        <h4 class="hidden-xs">Find Me On</h4>
-        <ul class="list-inline">
-        {% for social in site.author.socials %}
-          {% if social[1] %}
-            <li>
-              <a href="{{ social | last }}">
-                <i class="fa fa-lg fa-{{ social | first }}"></i>
-              </a>
-            </li>
-          {% endif %}
-        {% endfor %}
-        </ul>
+		<h2>{{ site.author.name }}</h2>
+		{{ site.author.profile | markdownify }}
+        <div class="hidden-xs">
+		<h4>Find Me On</h4>
+          <ul class="list-inline">
+          {% for social in site.author.socials %}
+            {% if social[1] %}
+              <li>
+                <a href="{{ social | last }}">
+                  <i class="fa fa-lg fa-{{ social | first }}"></i>
+                </a>
+              </li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+		</div>
       </div>
     </div>
-  </div>
-  <div class="col-xs-12 col-sm-8">
-    <h2>{{ site.author.name }}</h2>
-    {{ site.author.profile | markdownify }}
   </div>
 </div>

@@ -1,34 +1,21 @@
 {% capture pathtype %}{{ page.path | split: '/' | first }}{% endcapture %}
 {% if pathtype == '_posts' %}
-  {% if page.previous %}
-    {% capture older %}{{ site.baseurl }}{{ page.previous.url }}{% endcapture %}
-  {% endif %}
-  {% if page.next %}
-    {% capture newer %}{{ site.baseurl }}{{ page.next.url }}{% endcapture %}
-  {% endif %}
-{% elsif pathtype == 'page' or page.url == '/index.html' %}
-  {% if paginator.previous_page %}
-    {% capture newer %}{{ site.baseurl }}{{ paginator.previous_page_path }}{% endcapture %}
-  {% endif %}
-  {% if paginator.next_page %}
-    {% capture older %}{{ site.baseurl }}{{ paginator.next_page_path }}{% endcapture %}
-  {% endif %}
+	{% capture older %}{{ page.previous.url }}{% endcapture %}
+	{% capture newer %}{{ page.next.url }}{% endcapture %}
 {% endif %}
 
 <div class="hidden-xs col-sm-12" id="roaming-pager">
   {% if older or newer %}
-    <h3>Quick Navigation</h3>
+	<hr/>
     <ul class="pager" id="full-pager">
-      <li id="roaming-pager-newer">
-        {% capture disabled %}{% unless newer %}disabled{% endunless %}{% endcapture %}
-        <a href="{{ newer }}" class="btn btn-default {{ disabled }}">
+      <li id="roaming-pager-newer" class="previous {% if newer == "" %}disabled{% endif %}">
+        <a href="{{ site.baseurl }}{{ newer }}">
           <span>&laquo;</span>
           <span class="hidden-xs">Newer</span>
         </a>
       </li>
-      <li id="roaming-pager-older">
-        {% capture disabled %}{% unless older %}disabled{% endunless %}{% endcapture %}
-        <a href="{{ older }}" class="btn btn-default {{ disabled }}">
+      <li id="roaming-pager-older" class="next {% if older == "" %}disabled{% endif %}">
+        <a href="{{ site.baseurl }}{{ older }}">
           <span class="hidden-xs">Older</span>
           <span>&raquo;</span>
         </a>

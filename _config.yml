@@ -1,39 +1,27 @@
 # user variables, change this to make custom site.
 
-name: Lemma
-desc: Yet another simple theme for Jekyll.
+name: 'Book of Topaz'
+desc: 'Yet another simple theme for Jekyll.'
 author:
-  name: neizod
-  avatar: //gravatar.com/avatar/daa1cc36ed2ab0d13045d5cd2431cde9?s=320
-  profile: |
-    Just another ordinary grad student in computer engineering.
-    I'm interest in programming language, algorithm, and mathematics.
-
-    I live in Chiang Mai or Bangkok, Thailand.
-    And you may found me around BarCamp event ;D
+  name: Nanosmasher
+  avatar: 'https://identicons.github.com/nanosmasher.png'
+  profile: 'Learning about games, shows, and life from top-down and from bottom-up.
+  (py/lua, smash/PM/FGC, RWBY, blogs, materials engineering)'
   socials:
-    facebook:
-    twitter: //twitter.com/neizod
-    google-plus:
-    github: //github.com/neizod
-    stack-overflow: //stackoverflow.com/users/889578/neizod
-    instagram:
-    pinterest:
-    steam: //steamcommunity.com/id/neizod/
-license: MIT License
-
+    twitter: 'https://twitter.com/CrossPunishVG'
+    github-alt: 'https://github.com/nanosmasher'
+    steam: 'https://steamcommunity.com/id/nanosmasher/'
+gems: ['jekyll-paginate']
 
 # theme variables, change this to make site looks best.
-baseurl: /lemma-theme
+baseurl: /book-of-topaz
 paginate: 2
-
+permalink: '/:categories/:title/'
 
 # system variables, do not change unless you knew what's it does.
 paginate_path: page/:num
 highlighter: pygments
-markdown: redcarpet
-redcarpet:
-  extensions: ["tables"]
+markdown: kramdown
 
 defaults:
   - scope:

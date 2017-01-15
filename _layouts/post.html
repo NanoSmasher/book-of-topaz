@@ -2,13 +2,13 @@
 layout: default
 ---
 
-<h1>{{ page.title }}</h1>
+<h2>{{ page.title }}</h2>
 <p>
-  <span class="label label-info">
+  <span class="label label-default">
     <i class="fa fa-fw fa-calendar-o"></i>
-    {{ page.date | date_to_string }}
+    {{ page.date | date: "%b %-d %Y" }} 
   </span>
-  &nbsp;
+  <br/><br/>
   {% for tag in page.tags %}
     <span class="label label-default">
       <i class="fa fa-fw fa-tag"></i>
@@ -19,3 +19,8 @@ layout: default
 </p>
 <hr />
 {{ content }}
+<div class="row text-center">
+	<div class="col-xs-4 col-sm-2 col-sm-offset-3"><i class="fa fa-fw fa-stop"></i></div>
+	<div class="col-xs-4 col-sm-2"><i class="fa fa-fw fa-stop"></i></div>
+	<div class="col-xs-4 col-sm-2"><i class="fa fa-fw fa-stop"></i></div>
+</div>
