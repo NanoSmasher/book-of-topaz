@@ -7,8 +7,8 @@ layout: null
     xmlns:atom="http://www.w3.org/2005/Atom"
     >
     <channel>
-        <title>{{ site.title | xml_escape }}</title>
-        <description>{{ site.description | xml_escape }}</description>
+        <title>{{ site.name | xml_escape }}</title>
+        <description>{{ site.desc | xml_escape }}</description>
         <link>{{ site.url }}{{ site.baseurl }}</link>
         <atom:link href="{{ site.baseurl }}/rss.xml" rel="self" type="application/rss+xml" />
         {% for post in site.posts %}
