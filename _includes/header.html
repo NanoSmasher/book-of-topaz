@@ -1,6 +1,6 @@
-{% capture icon%}{% case page.url | split:"/" | first %}{% when "archives" %}archive{% when "tags" %}tags{% when "about" %}user{% endcase %}{% endcapture %}
+{% capture icon%}{% case page.url | split:"/" | first %} {% when "archives" %}fa-archive{% when "tags" %}fa-tags{% when "about" %}fa-user{% when "service" %}fa-bolt{% when "epiphany" %}fa-bomb{% when "numbers" %}fa-cubes{% when "refinery" %}fa-sun-o{% when "personal" %}fa-bookmark{% endcase %}{% endcapture %}
 <a href="{{ site.baseurl }}/"><i class="fa fa-fw fa-book"></i>{{ site.name }}</a>
-<small class="visible-xs-inline" id="location"> / <i class="fa fa-fw fa-{{icon}}"></i></small>
+<small class="visible-xs-inline" id="location"> / <i class="fa fa-fw{{icon}}"></i></small>
 <div class="button-group visible-xs pull-right">
   <button type="button" class="btn btn-default" id="menu-toggle">
     <span class="fa fa-bars"></span>

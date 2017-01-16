@@ -2,13 +2,20 @@
 layout: default
 ---
 
-<h2>{{ page.title }}</h2>
+<h3>{{ page.title }}</h3>
 <p>
-  <span class="label label-default">
+  Date: <span class="label label-default">
     <i class="fa fa-fw fa-calendar-o"></i>
     {{ page.date | date: "%b %-d %Y" }} 
   </span>
-  <br/><br/>
+  <br/>
+  {% capture colour %}{% case page.category %}{% when "Service" %}-primary{% when "Epiphany" %}-success{% when "Numbers" %}-info{% when "Refinery" %}-warning{% else %}-default{% endcase %}{% endcapture %}
+  Category: <span class="label label{{colour}}">
+      <i class="fa fa-fw fa-sitemap"></i>
+      {{ page.category }}
+  </span>
+  <br/>
+  Tags: 
   {% for tag in page.tags %}
     <span class="label label-default">
       <i class="fa fa-fw fa-tag"></i>
@@ -17,6 +24,21 @@ layout: default
     {% unless forloop.last %}&nbsp;{% endunless %}
   {% endfor %}
 </p>
+<div class="text-center">
+{% if page.thumbnail %}
+  {% if page.thumbnail contains "//" %}
+	{% capture thumbnail %}{{ page.thumbnail }}{% endcapture %}
+  {% else %}
+	{% capture thumbnail %}{{ page.thumbnail | prepend: site.baseurl }}{% endcapture %}
+  {% endif %}
+  <img class="img-responsive img-rounded" src="{{ thumbnail }}">
+{% else %}
+  <h1 class="poorman-thumbnail"
+	  style="background: {% cycle 'c': '#48c', '#fa4', '#5b5', '#d54' %};">
+	{{ page.title | truncate: 1, '' }}
+  </h1>
+{% endif %}
+</div>
 <hr />
 {{ content }}
 <div class="row text-center">

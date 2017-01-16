@@ -3,7 +3,7 @@
 
 <div class="row-fluid">
 {% for post in paginator.posts %}
-{% capture colour %}{% case post.category %}{% when "Service" %}-primary{% when "Ephiphany" %}-success{% when "Numbers" %}-info{% when "Trash" %}-warning{% else %}-default{% endcase %}{% endcapture %}
+{% capture colour %}{% case post.category %}{% when "Service" %}-primary{% when "Epiphany" %}-success{% when "Numbers" %}-info{% when "Refinery" %}-warning{% else %}-default{% endcase %}{% endcapture %}
 <div class="panel panel{{colour}}"><div class="panel-body">
   <div class="clearfix"></div>
   <div class="col-xs-12 col-sm-3">
