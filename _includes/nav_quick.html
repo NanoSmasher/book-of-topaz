@@ -9,16 +9,16 @@
 	<hr/>
     <ul class="pager" id="full-pager">
       <li id="roaming-pager-newer" class="previous {% if newer == "" %}disabled{% endif %}">
-        <a href="{{ site.baseurl }}{{ newer }}">
+        {% if newer != "" %}<a href="{{ site.baseurl }}{{ newer }}">
           <span>&laquo;</span>
           <span class="hidden-xs">Newer</span>
-        </a>
+        </a>{% endif %}
       </li>
       <li id="roaming-pager-older" class="next {% if older == "" %}disabled{% endif %}">
-        <a href="{{ site.baseurl }}{{ older }}">
+        {% if older != "" %}<a href="{{ site.baseurl }}{{ older }}">
           <span class="hidden-xs">Older</span>
           <span>&raquo;</span>
-        </a>
+        </a>{% endif %}
       </li>
     </ul>
   {% endif %}

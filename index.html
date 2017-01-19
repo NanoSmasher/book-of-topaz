@@ -7,7 +7,8 @@
 <div class="panel panel{{colour}}"><div class="panel-body">
   <div class="clearfix"></div>
   <div class="col-xs-12 col-sm-3">
-    <div class="text-center">
+    <a href="{{ site.baseurl }}{{ post.url }}">
+	<div class="text-center">
     {% if post.thumbnail %}
       {% if post.thumbnail contains "//" %}
         {% capture thumbnail %}{{ post.thumbnail }}{% endcapture %}
@@ -22,6 +23,7 @@
       </h1>
     {% endif %}
     </div>
+	</a>
   </div>
   <div class="col-xs-12 col-sm-9">
 	{% if post.url %}

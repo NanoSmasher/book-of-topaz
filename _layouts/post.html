@@ -2,47 +2,59 @@
 layout: default
 ---
 
-<h3>{{ page.title }}</h3>
-<p>
-  Date: <span class="label label-default">
-    <i class="fa fa-fw fa-calendar-o"></i>
-    {{ page.date | date: "%b %-d %Y" }} 
-  </span>
-  <br/>
-  {% capture colour %}{% case page.category %}{% when "Service" %}-primary{% when "Epiphany" %}-success{% when "Numbers" %}-info{% when "Refinery" %}-warning{% else %}-default{% endcase %}{% endcapture %}
-  Category: <span class="label label{{colour}}">
-      <i class="fa fa-fw fa-sitemap"></i>
-      {{ page.category }}
-  </span>
-  <br/>
-  Tags: 
-  {% for tag in page.tags %}
-    <span class="label label-default">
-      <i class="fa fa-fw fa-tag"></i>
-      {{ tag }}
-    </span>
-    {% unless forloop.last %}&nbsp;{% endunless %}
-  {% endfor %}
-</p>
-<div class="text-center">
-{% if page.thumbnail %}
-  {% if page.thumbnail contains "//" %}
-	{% capture thumbnail %}{{ page.thumbnail }}{% endcapture %}
-  {% else %}
-	{% capture thumbnail %}{{ page.thumbnail | prepend: site.baseurl }}{% endcapture %}
-  {% endif %}
-  <img class="img-responsive img-rounded" src="{{ thumbnail }}">
-{% else %}
-  <h1 class="poorman-thumbnail"
-	  style="background: {% cycle 'c': '#48c', '#fa4', '#5b5', '#d54' %};">
-	{{ page.title | truncate: 1, '' }}
-  </h1>
-{% endif %}
+<div class="row">
+	<div class="text-center col-xs-12 col-sm-4">
+	{% if page.thumbnail %}
+	  {% if page.thumbnail contains "//" %}
+		{% capture thumbnail %}{{ page.thumbnail }}{% endcapture %}
+	  {% else %}
+		{% capture thumbnail %}{{ page.thumbnail | prepend: site.baseurl }}{% endcapture %}
+	  {% endif %}
+	  <img class="img-responsive img-rounded" src="{{ thumbnail }}">
+	{% else %}
+	  <h1 class="poorman-thumbnail"
+		  style="background: {% cycle 'c': '#48c', '#fa4', '#5b5', '#d54' %};">
+		{{ page.title | truncate: 1, '' }}
+	  </h1>
+	{% endif %}
+	</div>
+	<div class="col-xs-12 col-sm-8">
+		<h3>{{ page.title }}</h3>
+		<p>
+		  <span class="label label-default">
+			<i class="fa fa-fw fa-calendar-o"></i>
+			{{ page.date | date: "%b %-d %Y" }} 
+		  </span>
+		  <br/>
+		  {% capture colour %}{% case page.category %}{% when "Service" %}-primary{% when "Epiphany" %}-success{% when "Numbers" %}-info{% when "Refinery" %}-warning{% else %}-default{% endcase %}{% endcapture %}
+		  <span class="label label{{colour}}">
+			  <i class="fa fa-fw fa-sitemap"></i>
+			  {{ page.category }}
+		  </span>
+		  <br/>
+		  {% for tag in page.tags %}
+			<span class="label label-default">
+			  <i class="fa fa-fw fa-tag"></i>
+			  {{ tag }}
+			</span>
+			{% unless forloop.last %}&nbsp;{% endunless %}
+		  {% endfor %}
+		</p>
+	</div>
 </div>
 <hr />
+{% if page.linkf %}
+<span class="text-center">
+	<h3><i class="fa fa-fw fa-lg fa-stop"></i> <a href="{{page.linkf}}">{{page.linkt}}</a> <i class="fa fa-fw fa-lg fa-stop"></i></h3>
+</span>
+<hr />
+{% endif %}
 {{ content }}
-<div class="row text-center">
-	<div class="col-xs-4 col-sm-2 col-sm-offset-3"><i class="fa fa-fw fa-stop"></i></div>
-	<div class="col-xs-4 col-sm-2"><i class="fa fa-fw fa-stop"></i></div>
-	<div class="col-xs-4 col-sm-2"><i class="fa fa-fw fa-stop"></i></div>
-</div>
+<br />
+{% if page.linkf %}
+<span class="text-center">
+	<h3><i class="fa fa-fw fa-lg fa-stop"></i> <a href="{{page.linkf}}">{{page.linkt}}</a> <i class="fa fa-fw fa-lg fa-stop"></i></h3>
+</span>
+{% endif %}
+<hr />
+<br/><br/><br/>
