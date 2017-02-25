@@ -21,8 +21,8 @@ layout: null
     <updated>{{ post.date | date_to_xmlschema }}</updated>
     <id>{{ site.url }}{{ site.baseurl }}{{ post.url }}</id>
     <content type="html">
-	{% if post.thumbnail %}{% if post.thumbnail contains "//" %}{% capture t %}{{ post.thumbnail }}{% endcapture %}{% else %}{% capture t %}{{ post.thumbnail | prepend: site.baseurl }}{% endcapture %}{% endif %}
-	{{ '<img class="img-responsive img-rounded" src="' | append: t | append: '">' | xml_escape }}
+	{% if post.thumbnail %}{% if post.thumbnail contains "//" %}{% capture t %}{{ post.thumbnail }}{% endcapture %}{% else %}{% capture t %}{{ post.thumbnail | prepend: site.baseurl | prepend: site.url }}{% endcapture %}{% endif %}
+	{{ '<img class="img-responsive" src="' | append: t | append: '" />' | xml_escape }}
 	{% endif %}
 	{{ post.excerpt | xml_escape }}</content>
   </entry>

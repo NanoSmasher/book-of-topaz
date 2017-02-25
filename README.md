@@ -6,7 +6,7 @@ A blog derived from [Lemma](https://github.com/neizod/lemma-theme).
 About
 -----
 
-I like to recommend a lot of different programs, apps, and tricks to my friends. Why stop there? This blog is an assortment of everything I have gathered to share with everyone who stumbles in here. Articles will have varying sizes and media, but generally will fall in one of the following categories:
+I like to recommend a lot of different programs, apps, and tricks to my friends. But now I want to share it with everyone. It is not a typical review/advert as it will provide more subjective experiences. For websites and programs I would go over the evolution of the interface and features from my perspective, whereas for neat tricks I write about the frequency and maybe how I stumbled upon it. To create some sort of structure, I have divided the website into these catagories:
 
 1. **Service**
 
